@@ -190,7 +190,7 @@ describe Album do
     end
     
     it "should add the found songs to the album" do
-      @album.songs.should_receive(:build).with :track => "1", :artist => "me", :title => "song", :file => "path"
+      @album.songs.should_receive(:new).with :track => "1", :artist => "me", :title => "song", :file => "path"
       Album.update
     end
     

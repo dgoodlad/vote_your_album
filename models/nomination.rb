@@ -15,9 +15,9 @@ class Nomination
   belongs_to :user
   has n, :songs, :through => Resource
   has n, :votes, :type => "vote", :value.gt => 0
-  has n, :negative_votes, :class_name => "Vote", :type => "vote", :value.lt => 0
-  has n, :down_votes, :class_name => "Vote", :type => "force"
-  has n, :ratings, :class_name => "Vote", :type => "rating"
+  has n, :negative_votes, :model => "Vote", :type => "vote", :value.lt => 0
+  has n, :down_votes, :model => "Vote", :type => "force"
+  has n, :ratings, :model => "Vote", :type => "rating"
   
   def artist; album.artist end
   def name; album.name end
